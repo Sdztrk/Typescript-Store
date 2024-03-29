@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Favorite from './pages/Favorite';
+import Navbar from './components/Navbar';
+import {useSelector} from 'react-redux'
+import { RootState } from './store';
 
-function App() {
+
+const App = () => {
+
+  const {darkMode} = useSelector((state: RootState)=> state.ui)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className={darkMode?"dark":''}>
+        <div className="app">
+          <Navbar title='Store'/>
+          <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/favorites' element={<Favorite/>}/>
+          </Routes>
+        </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
