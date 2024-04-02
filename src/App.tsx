@@ -13,7 +13,7 @@ const App = () => {
 
     <div className={darkMode?"dark":''}>
         <div className="app">
-          <Navbar title='Store'/>
+          <Navbar title='My Store'/>
           <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/favorites' element={<Favorite/>}/>

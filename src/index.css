@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar{
+    @apply flex justify-between items-center px-5 h-[50px] text-slate-800 bg-slate-200 shadow-lg dark:text-white dark:bg-slate-800;
+}
+
+.app{
+    @apply min-h-[100vh] bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50;
+}
